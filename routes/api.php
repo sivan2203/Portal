@@ -30,6 +30,12 @@ Route::post('peoples', 'People\PeopleController@peoplesSave');
 Route::put('peoples/{id}', 'People\PeopleController@peoplesEdit');
 Route::delete('peoples/{id}', 'People\PeopleController@peoplesDelete');
 //comments
+Route::get('comments', 'Comments\CommentsController@comments');
+Route::get('comments/{id}', 'Comments\CommentsController@commentsById');
+Route::post('comments', 'Comments\CommentsController@commentsSave');
+Route::put('comments/{id}', 'Comments\CommentsController@commentsEdit');
+Route::delete('comments/{id}', 'Comments\CommentsController@commentsDelete');
+//
 
 
 
