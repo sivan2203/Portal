@@ -21,6 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2b36534e-1229-4372-9149-1a855831b7ca" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/News/NewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/News/NewsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -204,9 +205,18 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1618328396321">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="761" y="217" key="#com.intellij.ide.util.MemberChooser" timestamp="1618344363907">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="761" y="217" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1618344363907" />
+    <state x="765" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1618340620214">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="765" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080@0.0.1920.1080" timestamp="1618340620214" />
+    <state x="513" y="235" width="894" height="812" key="search.everywhere.popup" timestamp="1618343288231">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1618328396321" />
+    <state x="513" y="235" width="894" height="812" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1618343288231" />
   </component>
 </project>

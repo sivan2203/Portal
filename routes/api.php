@@ -18,4 +18,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('articles', 'News\NewsController@news');
+Route::get('news', 'News\NewsController@news');
+Route::get('news/{id}', 'News\NewsController@newsById');
+Route::post('news', 'News\NewsController@newsSave');
+Route::put('news/{id}', 'News\NewsController@newsEdit');
+Route::delete('news/{id}', 'News\NewsController@newsDelete');
+
+
+
+
