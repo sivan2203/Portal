@@ -23,7 +23,6 @@ class NewsController extends Controller
 
     public function newsSave(Request $req){
         $rules = [
-            'iso' => 'required|min:2|max:2',
             'title' => 'required|min:3',
             'content' => 'required|min:3',
         ];
