@@ -1,12 +1,31 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+<div>
+  <b-navbar type="dark" variant="dark">
+    <b-navbar-nav style="margin: 0 auto">
+    <b-nav-item>
+      <router-link style="text-decoration: none" to="/">Home</router-link> 
+    </b-nav-item>
+    <b-nav-item>
+      <router-link style="text-decoration: none" to="/about">Admin panel</router-link>
+    </b-nav-item>
+    </b-navbar-nav>
+  </b-navbar>
     <router-view/>
-  </div>
+</div>
 </template>
+
+<script>
+import { BNavbar, BNavItem, BNavbarNav, } from 'bootstrap-vue'
+
+export default({
+  components: {
+    BNavbar, 
+    BNavItem,
+    BNavbarNav,
+  }
+})
+</script>
+
 
 <style>
 #app {
