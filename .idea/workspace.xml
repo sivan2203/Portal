@@ -19,7 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b36534e-1229-4372-9149-1a855831b7ca" name="Default Changelist" comment="" />
+    <list default="true" id="2b36534e-1229-4372-9149-1a855831b7ca" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_13_035448_create_comments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_04_13_035448_create_comments_table.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -183,6 +186,7 @@
       <updated>1618236453049</updated>
       <workItem from="1618236453218" duration="1599000" />
       <workItem from="1618243996963" duration="6221000" />
+      <workItem from="1618403691697" duration="4144000" />
     </task>
     <servers />
   </component>
@@ -199,6 +203,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="761" y="217" key="#com.intellij.ide.util.MemberChooser" timestamp="1618344363907">
