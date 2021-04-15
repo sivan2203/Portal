@@ -1,25 +1,20 @@
 <template>
-  <div  class="bg-primary text-dark" style="margin-top: 1%; margin: 0 auto; width: 60%; border-radius: 5px">
+  <div  class="text-dark" style="margin-top: 1%; margin: 0 auto; width: 60%; border-radius: 5px">
     <b-card
-      v-for="(title, index) in textNews.title"
-      :key="index" 
-      :title="title"
+      v-for="(title, item) in textNews" :key="item"
+      :title="title.title"
       img-src="https://picsum.photos/600/300/?image=25"
       img-alt="Image"
       img-top
       tag="article"
       class="mt-2"
     >
-      <template>
-        <div v-for="(text, index) in textNews.text" :key="index">
-        <b-collapse id="collapse">
+        <b-collapse :id="`collapse${title.id}`">
           <b-card-text>
-            {{ text }}
+            {{ title.text }}
           </b-card-text>
         </b-collapse>
-        <b-button v-b-toggle="'collapse'" variant="primary">See more</b-button>
-        </div>
-      </template>
+        <b-button v-b-toggle="`collapse${title.id}`" variant="primary">See more</b-button>
       </b-card>
   </div>
 </template>
@@ -38,10 +33,10 @@ export default {
   },
   data() {
     return ({
-      textNews: {
-        title: ['Card Title'],
-        text: [`Some quick example text to build on the card title and make up the bulk of the card's content.`],
-      }
+      textNews: [
+        {id: 1, title: 'Card Title', text: `Some quick example text to build on the card title and make up the bulk of the card's content.`},
+         {id: 2, title: 'Lorem Title', text: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident odit dolorum sint aperiam, ipsa consequatur nesciunt alias omnis voluptas libero perspiciatis ipsam saepe labore velit accusantium veniam illo, voluptatem adipisci.`},
+      ]
     })
   },
   methods: {
