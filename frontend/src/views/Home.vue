@@ -6,26 +6,36 @@
           img-alt="Image"
           img-top
           tag="article"
-          class="mb-2"
+          class="mt-2"
         >
-        <b-card-text>
-          Some quick example text to build on the card title and make up the bulk of the card's content.
-        </b-card-text>
-        <b-button variant="primary">See more</b-button>
+        <b-collapse id="collapse">
+          <b-card-text>
+            Some quick example text to build on the card title and make up the bulk of the card's content.
+          </b-card-text>
+        </b-collapse>
+        <b-button v-b-toggle="'collapse'" variant="primary">See more</b-button>
         </b-card>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import { BButton, BCardText, BCard, } from 'bootstrap-vue'
+import { BButton, BCardText, BCard, BCollapse, } from 'bootstrap-vue'
 
 export default {
-  name: 'Home',
   components: {
     BButton,
     BCardText, 
     BCard,
+    BCollapse,
+  },
+  data() {
+    return ({
+
+    })
+  },
+  methods: {
+
   }
 }
 </script>
