@@ -35,7 +35,8 @@ Route::get('comments/{id}', 'Comments\CommentsController@commentsById');
 Route::post('comments', 'Comments\CommentsController@commentsSave');
 Route::put('comments/{id}', 'Comments\CommentsController@commentsEdit');
 Route::delete('comments/{id}', 'Comments\CommentsController@commentsDelete');
-//
+//images
+
 
 
 
