@@ -12,16 +12,8 @@ class ImagesController extends Controller
         return response()->json(ImagesModel::get(), 200);
     }
 
-    public function ImagesById($id){
+    public function imagesById($id){
         $images = ImagesModel::find($id);
-        if(is_null($images)){
-            return response()->json(['error' => true, 'message' => 'Not found'], 404);
-        }
-        return response()->json($images, 200);
-    }
-
-    public function ImagesByArticleId($article_id){
-        $images = ImagesModel::find($article_id);
         if(is_null($images)){
             return response()->json(['error' => true, 'message' => 'Not found'], 404);
         }
@@ -33,7 +25,7 @@ class ImagesController extends Controller
         return response()->json($images, 201);
     }
 
-    public function imagesEditById(Request $req, $id){
+    public function imagesEdit(Request $req, $id){
 
         $images = ImagesModel::find($id);
         if(is_null($images)){
@@ -43,17 +35,7 @@ class ImagesController extends Controller
         return response()->json($images, 200);
     }
 
-    public function imagesEditByArticleId(Request $req, $article_id){
-
-        $images = ImagesModel::find($article_id);
-        if(is_null($images)){
-            return response()->json(['error' => true, 'message' => 'Not found'], 404);
-        }
-        $images->update($req->all());
-        return response()->json($images, 200);
-    }
-
-    public function imagesDeleteById(Request $req, $id){
+    public function imagesDelete(Request $req, $id){
         $images = ImagesModel::find($id);
         if(is_null($images)){
             return response()->json(['error' => true, 'message' => 'Not found'], 404);
@@ -62,12 +44,5 @@ class ImagesController extends Controller
         return response()->json('', 204);
     }
 
-    public function imagesDeleteByArticleId(Request $req, $article_id){
-        $images = ImagesModel::find($article_id);
-        if(is_null($images)){
-            return response()->json(['error' => true, 'message' => 'Not found'], 404);
-        }
-        $images->delete();
-        return response()->json('', 204);
-    }
+
 }

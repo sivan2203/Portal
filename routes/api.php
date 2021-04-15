@@ -38,12 +38,9 @@ Route::delete('comments/{id}', 'Comments\CommentsController@commentsDelete');
 //images
 Route::get('images', 'Images\ImagesController@images');
 Route::get('images/{id}', 'Images\ImagesController@imagesById');
-Route::get('images/{article_id}', 'Images\ImagesController@imagesByArticleId');
 Route::post('images', 'Images\ImagesController@imagesSave');
-Route::put('images/{id}', 'Images\ImagesController@imagesEditById');
-Route::put('images/{article_id}', 'Images\ImagesController@imagesEditByArticleId');
-Route::delete('images/{id}', 'Images\ImagesController@imagesDeleteById');
-Route::delete('images/{article_id}', 'Images\ImagesController@imagesDeleteByArticleId');
+Route::put('images/{id}', 'Images\ImagesController@imagesEdit');
+Route::delete('images/{id}', 'Images\ImagesController@imagesDelete');
 
 
 
