@@ -6,7 +6,7 @@
       <router-link style="text-decoration: none" to="/">Home</router-link> 
     </b-nav-item>
     <b-nav-item>
-      <router-link style="text-decoration: none" to="/about">Admin panel</router-link>
+      <router-link style="text-decoration: none" to="/admin">Admin panel</router-link>
     </b-nav-item>
     </b-navbar-nav>
   </b-navbar>
