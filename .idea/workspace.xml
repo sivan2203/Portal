@@ -19,7 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b36534e-1229-4372-9149-1a855831b7ca" name="Default Changelist" comment="" />
+    <list default="true" id="2b36534e-1229-4372-9149-1a855831b7ca" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vue.config.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -156,6 +163,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -165,6 +173,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -183,6 +192,10 @@
       <updated>1618236453049</updated>
       <workItem from="1618236453218" duration="1599000" />
       <workItem from="1618243996963" duration="6221000" />
+      <workItem from="1618501969248" duration="296000" />
+      <workItem from="1618502286500" duration="292000" />
+      <workItem from="1618502735770" duration="961000" />
+      <workItem from="1618565177142" duration="69000" />
     </task>
     <servers />
   </component>
@@ -199,24 +212,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="761" y="217" key="#com.intellij.ide.util.MemberChooser" timestamp="1618344363907">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="761" y="217" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1618344363907" />
-    <state x="698" y="299" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1618347391573">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="698" y="299" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1618347391573" />
-    <state x="765" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1618340620214">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="765" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080@0.0.1920.1080" timestamp="1618340620214" />
-    <state x="513" y="235" width="894" height="812" key="search.everywhere.popup" timestamp="1618343288231">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1618328396321" />
-    <state x="513" y="235" width="894" height="812" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1618343288231" />
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
