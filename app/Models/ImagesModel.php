@@ -10,7 +10,6 @@ class ImagesModel extends Model
     use HasFactory;
     protected $table='images';
     protected $fillable = [
-        'id',
         'article_id',
         'image',
         'created_at',

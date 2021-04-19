@@ -22,6 +22,7 @@
     <list default="true" id="2b36534e-1229-4372-9149-1a855831b7ca" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.vue" afterDir="false" />
@@ -30,6 +31,10 @@
       <change beforePath="$PROJECT_DIR$/frontend/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/views/About.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/About.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Home.vue" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_15_085350_create_images_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_04_15_085350_create_images_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+>>>>>>> backend
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +201,13 @@
       <workItem from="1618236453218" duration="1599000" />
       <workItem from="1618243996963" duration="6221000" />
       <workItem from="1618403691697" duration="4144000" />
+<<<<<<< HEAD
       <workItem from="1618565178798" duration="363000" />
+=======
+      <workItem from="1618568397622" duration="941000" />
+      <workItem from="1618672168103" duration="743000" />
+      <workItem from="1618840258954" duration="5859000" />
+>>>>>>> backend
     </task>
     <servers />
   </component>
@@ -224,6 +235,22 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="698" y="299" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1618479656726" />
+    <state width="1878" height="291" key="GridCell.Tab.0.bottom" timestamp="1618842237715">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="291" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1618842237715" />
+    <state width="1878" height="291" key="GridCell.Tab.0.center" timestamp="1618842237714">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="291" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1618842237714" />
+    <state width="1878" height="291" key="GridCell.Tab.0.left" timestamp="1618842237713">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="291" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1618842237713" />
+    <state width="1878" height="291" key="GridCell.Tab.0.right" timestamp="1618842237714">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="291" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1618842237714" />
     <state x="491" y="287" key="SettingsEditor" timestamp="1618502471828">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
