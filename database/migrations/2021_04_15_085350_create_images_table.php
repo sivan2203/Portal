@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class CreateImagesTable extends Migration
@@ -15,7 +16,6 @@ class CreateImagesTable extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->integer('id')->unsigned();
-            $table->binary('image');
             $table->timestamps();
 
 
@@ -23,6 +23,7 @@ class CreateImagesTable extends Migration
         Schema::table('images', function(Blueprint $table) {
             $table->foreign('id')->references('id')->on('articles');
         });
+        DB::statement("ALTER TABLE images ADD image MEDIUMBLOB");
     }
 
     /**

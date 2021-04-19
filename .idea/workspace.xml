@@ -21,9 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2b36534e-1229-4372-9149-1a855831b7ca" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/ImagesModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ImagesModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_13_035333_create_people_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_02_13_035333_create_people_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_13_035508_create_articles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_13_035508_create_articles_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_15_085350_create_images_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_04_15_085350_create_images_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
@@ -194,7 +191,7 @@
       <workItem from="1618403691697" duration="4144000" />
       <workItem from="1618568397622" duration="941000" />
       <workItem from="1618672168103" duration="743000" />
-      <workItem from="1618840258954" duration="2578000" />
+      <workItem from="1618840258954" duration="5859000" />
     </task>
     <servers />
   </component>
