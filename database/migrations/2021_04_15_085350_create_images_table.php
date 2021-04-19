@@ -14,15 +14,14 @@ class CreateImagesTable extends Migration
     public function up()
     {
         Schema::create('images', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('article_id')->unsigned();
+            $table->integer('id')->unsigned();
             $table->binary('image');
             $table->timestamps();
 
 
         });
         Schema::table('images', function(Blueprint $table) {
-            $table->foreign('article_id')->references('id')->on('articles');
+            $table->foreign('id')->references('id')->on('articles');
         });
     }
 

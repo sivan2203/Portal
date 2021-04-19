@@ -36,11 +36,11 @@ Route::post('comments', 'Comments\CommentsController@commentsSave');
 Route::put('comments/{id}', 'Comments\CommentsController@commentsEdit');
 Route::delete('comments/{id}', 'Comments\CommentsController@commentsDelete');
 //images
-Route::get('images', 'Images\ImagesController@images');
-Route::get('images/{id}', 'Images\ImagesController@imagesById');
-Route::post('images', 'Images\ImagesController@imagesSave');
-Route::put('images/{id}', 'Images\ImagesController@imagesEdit');
-Route::delete('images/{id}', 'Images\ImagesController@imagesDelete');
+//Route::get('images', 'Images\ImagesController@images');
+//Route::get('images/{id}', 'Images\ImagesController@imagesById');
+//Route::post('images', 'Images\ImagesController@imagesSave');
+//Route::put('images/{id}', 'Images\ImagesController@imagesEdit');
+//Route::delete('images/{id}', 'Images\ImagesController@imagesDelete');
 
 
 
