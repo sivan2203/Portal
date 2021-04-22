@@ -21,9 +21,24 @@
   <component name="ChangeListManager">
     <list default="true" id="2b36534e-1229-4372-9149-1a855831b7ca" name="Default Changelist" comment="">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+>>>>>>> dcdd9a9d73e7410a15f973a2d3d74027f544c2a5
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Images/ImagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Images/ImagesController.php" afterDir="false" />
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/HelloWorld.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/About.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/About.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Home.vue" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_15_085350_create_images_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_04_15_085350_create_images_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+<<<<<<< HEAD
 =======
       <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -32,6 +47,9 @@
       <change beforePath="$PROJECT_DIR$/frontend/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vue.config.js" afterDir="false" />
 >>>>>>> frontend
+=======
+>>>>>>> backend
+>>>>>>> dcdd9a9d73e7410a15f973a2d3d74027f544c2a5
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +197,11 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+<<<<<<< HEAD
     <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+=======
+    <property name="settings.editor.selected.configurable" value="xslt.associations" />
+>>>>>>> dcdd9a9d73e7410a15f973a2d3d74027f544c2a5
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -200,12 +222,22 @@
       <workItem from="1618243996963" duration="6221000" />
 <<<<<<< HEAD
       <workItem from="1618403691697" duration="4144000" />
+<<<<<<< HEAD
 =======
       <workItem from="1618501969248" duration="296000" />
       <workItem from="1618502286500" duration="292000" />
       <workItem from="1618502735770" duration="961000" />
       <workItem from="1618565177142" duration="69000" />
 >>>>>>> frontend
+=======
+<<<<<<< HEAD
+      <workItem from="1618565178798" duration="363000" />
+=======
+      <workItem from="1618568397622" duration="941000" />
+      <workItem from="1618672168103" duration="743000" />
+      <workItem from="1618840258954" duration="5859000" />
+>>>>>>> backend
+>>>>>>> dcdd9a9d73e7410a15f973a2d3d74027f544c2a5
     </task>
     <servers />
   </component>
@@ -234,6 +266,26 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="698" y="299" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1618479656726" />
+    <state width="1878" height="291" key="GridCell.Tab.0.bottom" timestamp="1618842237715">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="291" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1618842237715" />
+    <state width="1878" height="291" key="GridCell.Tab.0.center" timestamp="1618842237714">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="291" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1618842237714" />
+    <state width="1878" height="291" key="GridCell.Tab.0.left" timestamp="1618842237713">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="291" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1618842237713" />
+    <state width="1878" height="291" key="GridCell.Tab.0.right" timestamp="1618842237714">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="291" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1618842237714" />
+    <state x="491" y="287" key="SettingsEditor" timestamp="1618502471828">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="491" y="287" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1618502471828" />
     <state x="765" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1618340620214">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -248,5 +300,14 @@
     <expand />
     <select />
 >>>>>>> frontend
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand>
+      <path>
+        <item name="portal" type="b2602c69:ProjectViewProjectNode" />
+        <item name="portal" type="462c0819:PsiDirectoryNode" />
+      </path>
+    </expand>
+    <select />
   </component>
 </project>
