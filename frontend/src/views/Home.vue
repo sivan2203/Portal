@@ -1,5 +1,5 @@
 <template>
-  <div  class="text-dark" style="margin-top: 1%; margin: 0 auto; width: 40%; border-radius: 5px">
+  <div :optios="test" class="text-dark" style="margin-top: 1%; margin: 0 auto; width: 40%; border-radius: 5px">
     <b-card
       v-for="(title, item) in textNews" :key="item"
       :title="title.title"
@@ -11,7 +11,7 @@
     >
       <b-collapse :id="`collapse${title.id}`">
         <b-card-text>
-          {{ title.text }}
+          {{ title.content }}
         </b-card-text>
       </b-collapse>
       <b-button v-b-toggle="`collapse${title.id}`" variant="primary">See more</b-button>
@@ -34,15 +34,19 @@ export default {
   data() {
     return ({
       textNews: [
-        {id: 1, title: 'Card Title', text: `Some quick example text to build on the card title and make up the bulk of the card's content.`},
-         {id: 2, title: 'Lorem Title', text: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident odit dolorum sint aperiam, ipsa consequatur nesciunt alias omnis voluptas libero perspiciatis ipsam saepe labore velit accusantium veniam illo, voluptatem adipisci.`},
-         {id: 3, title: 'Lorem Title', text: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident odit dolorum sint aperiam, ipsa consequatur nesciunt alias omnis voluptas libero perspiciatis ipsam saepe labore velit accusantium veniam illo, voluptatem adipisci.`},
+        {id: 1, title: 'Card Title', content: `Some quick example text to build on the card title and make up the bulk of the card's content.`},
+         {id: 2, title: 'Lorem Title', content: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident odit dolorum sint aperiam, ipsa consequatur nesciunt alias omnis voluptas libero perspiciatis ipsam saepe labore velit accusantium veniam illo, voluptatem adipisci.`}
       ]
     })
   },
+  computed: {
+    test(){
+      return this.getNewsData()
+    }
+  },
   methods: {
     getNewsData() {
-      axios.get('url').then(response => {
+      axios.get('/api/news/all').then(response => {
         this.textNews.title.push(response.data.title)
         this.textNews.text.push(response.data.text)
       })
