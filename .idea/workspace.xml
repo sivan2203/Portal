@@ -21,6 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2b36534e-1229-4372-9149-1a855831b7ca" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Images/ImagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Images/ImagesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_15_085350_create_images_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_04_15_085350_create_images_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>

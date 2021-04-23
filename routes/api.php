@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,7 @@ Route::post('images/new', 'Images\ImagesController@imagesSave');
 Route::put('images/edit/{id}', 'Images\ImagesController@imagesEdit');
 Route::delete('images/delete/{id}', 'Images\ImagesController@imagesDelete');
 
+Route::post('upload', [FileController::class, 'upload'] );
 
 
 
