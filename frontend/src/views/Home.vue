@@ -27,15 +27,13 @@ import axios from 'axios'
 export default {
   components: {
     BButton,
-    BCardText, 
+    BCardText,
     BCard,
     BCollapse,
   },
   data() {
     return ({
       textNews: [
-        {id: 1, title: 'Card Title', content: `Some quick example text to build on the card title and make up the bulk of the card's content.`},
-         {id: 2, title: 'Lorem Title', content: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident odit dolorum sint aperiam, ipsa consequatur nesciunt alias omnis voluptas libero perspiciatis ipsam saepe labore velit accusantium veniam illo, voluptatem adipisci.`}
       ]
     })
   },
@@ -46,9 +44,11 @@ export default {
   },
   methods: {
     getNewsData() {
-      axios.get('/api/news/all').then(response => {
-        this.textNews.title.push(response.data.title)
-        this.textNews.text.push(response.data.text)
+      axios.get('http://127.0.0.1:8000/api/news/all').then(response => {
+          // console.log(response.data.length);
+          for(let i = 0; i<response.data.length; i++) {
+              this.textNews.push({title: response.data[i].title, content: response.data[i].content})
+          }
       })
     }
   }
