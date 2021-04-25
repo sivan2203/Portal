@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Images;
 use App\Http\Controllers\Controller;
 use App\Models\ImagesModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use phpDocumentor\Reflection\File;
 
 class ImagesController extends Controller
 {
@@ -14,9 +16,12 @@ class ImagesController extends Controller
 
     public function imagesById($id){
         $images = ImagesModel::find($id);
+//        $hashName = $images['images'];
         if(is_null($images)){
             return response()->json(['error' => true, 'message' => 'Not found'], 404);
         }
+//        $pathImg = 'storage/app/apiDocs/'.$hashName;
+//        $img = compact($pathImg);
         return response()->json($images, 200);
     }
 

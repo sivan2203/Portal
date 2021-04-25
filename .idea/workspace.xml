@@ -27,6 +27,7 @@
 >>>>>>> dcdd9a9d73e7410a15f973a2d3d74027f544c2a5
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.vue" afterDir="false" />
@@ -50,6 +51,9 @@
 =======
 >>>>>>> backend
 >>>>>>> dcdd9a9d73e7410a15f973a2d3d74027f544c2a5
+=======
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+>>>>>>> backend
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,6 +208,12 @@
 >>>>>>> dcdd9a9d73e7410a15f973a2d3d74027f544c2a5
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/images" />
+      <recent name="$PROJECT_DIR$/uploads/images" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
@@ -286,10 +296,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="491" y="287" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1618502471828" />
-    <state x="765" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1618340620214">
+    <state x="765" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1619278154820">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="765" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080@0.0.1920.1080" timestamp="1618340620214" />
+    <state x="765" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080@0.0.1920.1080" timestamp="1619278154820" />
     <state x="513" y="235" width="894" height="812" key="search.everywhere.popup" timestamp="1618343288231">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

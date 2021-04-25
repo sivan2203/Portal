@@ -24,7 +24,7 @@ class CommentsController extends Controller
 
     public function commentsSave(Request $req){
         $rules = [
-            'body' => 'required|min:3',
+            'body' => 'required|min:4',
         ];
         $validator = Validator::make($req->all(), $rules);
         if($validator->fails()){
