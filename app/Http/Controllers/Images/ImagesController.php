@@ -16,18 +16,23 @@ class ImagesController extends Controller
 
     public function imagesById($id){
         $images = ImagesModel::find($id);
-//        $hashName = $images['images'];
+        $hashName = $images['images'];
         if(is_null($images)){
             return response()->json(['error' => true, 'message' => 'Not found'], 404);
         }
 //        $pathImg = 'storage/app/apiDocs/'.$hashName;
 //        $img = compact($pathImg);
-        return response()->json($images, 200);
+        $imageURL = asset("storage/uploads/images/".$hashName);
+        return response()->json(['image' => $imageURL], 200);
     }
 
     public function imagesSave(Request $req){
+        $result = $req->file('images')->store('public/uploads/images');
+        $hashName = $req->file('images')->hashName();
+        $id = $req['id'];
+
         $images = ImagesModel::create($req->all());
-        return response()->json($images, 201);
+        return response()->json($result['images'], 201);
     }
 
     public function imagesEdit(Request $req, $id){
