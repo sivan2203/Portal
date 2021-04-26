@@ -36,6 +36,10 @@ export default {
       textNews: [
         {id: 1, title: 'Card Title', content: `Some quick example text to build on the card title and make up the bulk of the card's content.`},
          {id: 2, title: 'Lorem Title', content: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident odit dolorum sint aperiam, ipsa consequatur nesciunt alias omnis voluptas libero perspiciatis ipsam saepe labore velit accusantium veniam illo, voluptatem adipisci.`}
+      ],
+      testArr: [
+        {id: '3', title: 'ref', content: 'her'},
+        {id: '4', title: 'fer', content: 'reg'}
       ]
     })
   },
@@ -47,10 +51,18 @@ export default {
   methods: {
     getNewsData() {
       axios.get('/api/news/all').then(response => {
-        this.textNews.title.push(response.data.title)
-        this.textNews.text.push(response.data.text)
+        response.data.forEach(element => {
+          this.textNews.push({id: element.id, title: element.title, content: element.content})
+        })
+      }).catch(error => {
+        console.log(error)
       })
-    }
+    },
+    // testNewsData() {
+    //   this.testArr.forEach(element => {
+    //     this.textNews.push({id: element.id, title: element.title, content: element.content})
+    //   })
+    // }
   }
 }
 </script>
