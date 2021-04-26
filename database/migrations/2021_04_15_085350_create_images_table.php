@@ -16,6 +16,7 @@ class CreateImagesTable extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->integer('id')->unsigned();
+            $table->text("images");
             $table->timestamps();
 
 
@@ -23,7 +24,6 @@ class CreateImagesTable extends Migration
         Schema::table('images', function(Blueprint $table) {
             $table->foreign('id')->references('id')->on('articles');
         });
-        DB::statement("ALTER TABLE images ADD image MEDIUMBLOB");
     }
 
     /**
