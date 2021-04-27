@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\NewsModel;
 use Validator;
 
-Header('Access-Control-Allow-Methods: POST, OPTIONS, PUT, DELETE'); //method allowed
+//Header('Access-Control-Allow-Methods: POST, OPTIONS, PUT, DELETE'); //method allowed
 
 class NewsController extends Controller
 {
