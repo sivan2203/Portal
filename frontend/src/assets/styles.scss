@@ -1,0 +1,14 @@
+@import './variables.scss';
+div {
+  margin-top: 1%;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+#b-card {
+  margin: 0 auto;
+  width: 40%;
+}
+#img-preview {
+  width: $imgSize;
+  height: $imgSize;
+}

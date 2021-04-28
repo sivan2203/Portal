@@ -1,10 +1,7 @@
 <template>
-  <div
-    :optios="test"
-    class="text-dark"
-    style="margin-top: 1%; margin: 0 auto; width: 40%; border-radius: 5px"
-  >
+  <div :optios="test" class="text-dark">
     <b-card
+      id="b-card"
       v-for="(title, item) in textNews"
       :key="item"
       :title="title.title"
@@ -30,6 +27,7 @@
 // @ is an alias to /src
 import { BButton, BCardText, BCard, BCollapse } from 'bootstrap-vue'
 import axios from 'axios'
+import '@/assets/styles.scss'
 
 export default {
   components: {

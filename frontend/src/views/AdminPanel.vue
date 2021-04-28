@@ -1,10 +1,10 @@
 <template>
-  <div class="about" style="margin: 0 auto; width: 60%">
-    <b-card class="blog-edit-wrapper">
+  <div class="about">
+    <b-card id="b-card" class="blog-edit-wrapper">
       <!-- form -->
       <b-form class="mt-2">
         <b-row>
-          <b-col md="1">
+          <b-col md="2">
             <b-form-group label="News id">
               <b-form-input v-model="newsData.id" />
             </b-form-group>
@@ -32,10 +32,9 @@
               >
                 <b-media-aside>
                   <b-img
+                    id="img-preview"
                     v-show="showPreview"
                     :src="imagePreview"
-                    height="400"
-                    width="400"
                   />
                 </b-media-aside>
                 <b-media-body>
@@ -136,6 +135,7 @@ import {
   BFormTextarea
 } from 'bootstrap-vue'
 import axios from 'axios'
+import '@/assets/styles.scss'
 
 export default {
   components: {
@@ -164,9 +164,6 @@ export default {
         content: ''
       },
       blogFile: null,
-
-      imageWidth: '250px',
-      imageHeight: '250px',
       file: '',
       showPreview: false,
       imagePreview: ''
