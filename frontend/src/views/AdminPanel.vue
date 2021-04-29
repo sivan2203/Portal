@@ -184,13 +184,16 @@ export default {
       newsData: {
         id: '',
         title: '',
-        content: '',
-        img: ''
+        content: ''
       },
       alertType: {
         variant: '',
         text: `New news hasn't been created`,
         error: ''
+      },
+      images: {
+        id: null,
+        img: null
       },
       blogFile: null,
       file: '',
@@ -229,42 +232,40 @@ export default {
     submitFile() {
       const formData = new FormData() // Инициализируем наш объект FormData()
       formData.append('file', this.file) // Добавляем новое значение через append
-
-      this.newsData.img = formData
-      console.log(this.newsData.img.get('file'))
+      this.images.img = formData
+      // http://localhost:8000/api/news/new
+      // http://localhost:3000/posts
       axios
-        .post('http://localhost:8000/api/news/new', formData, {
+        .post('http://localhost:8000/api/news/new', this.newsData, {
           headers: {
-            'Content-Type': 'multipart/form-data'
+            'Content-Type': 'multipart/form-data; application/json;'
+          },
+          withcredentials: true
+        })
+        .then(response => {
+          if (response.status === 201) {
+            this.images.id = response.data.id
+            axios
+              .post('http://localhost:8000/api/images/new', this.images, {
+                headers: {
+                  'Content-Type': 'multipart/form-data; application/json;'
+                }
+              })
+              .then(respon => {
+                if (respon === 201) {
+                  this.alertType.variant = 'success'
+                  this.alertType.text = 'New news has been successfully created'
+                  this.alertType.error = ''
+                  this.showAlert()
+                }
+              })
           }
         })
-        .then(() => {
-          // http://localhost:8000/api/news/new
-          // http://localhost:3000/posts
-          axios
-            .post('http://localhost:8000/api/news/new', this.newsData, {
-              headers: {
-                'Content-Type': 'multipart/form-data; application/json;'
-              },
-              withcredentials: true
-            })
-            .then(response => {
-              if (response.status === 201) {
-                this.alertType.variant = 'success'
-                this.alertType.text = 'New news has been successfully created'
-                this.alertType.error = ''
-                this.showAlert()
-              }
-            })
-            .catch(error => {
-              this.alertType.variant = 'danger'
-              this.alertType.text = `New news hasn't been created`
-              this.alertType.error = error
-              this.showAlert()
-            })
-        })
         .catch(error => {
-          console.log(error)
+          this.alertType.variant = 'danger'
+          this.alertType.text = `New news hasn't been created`
+          this.alertType.error = error
+          this.showAlert()
         })
     },
     findNewsById() {
@@ -293,7 +294,7 @@ export default {
     deleteNewsById() {
       axios
         // http://localhost:8000/api/news/delete/${this.newsData.id}
-        http://localhost:3000/posts/${this.newsData.id}
+        // http://localhost:3000/posts/${this.newsData.id}
         .delete(
           `http://localhost:8000/api/news/delete/${this.newsData.id}`,
           {},
@@ -326,12 +327,16 @@ export default {
       axios
         // http://localhost:8000/api/news/edit/${this.newsData.id}
         // http://localhost:3000/posts/${this.newsData.id}
-        .put(`http://localhost:8000/api/news/edit/${this.newsData.id}`, this.newsData, {
-          headers: {
-            'Content-Type': 'multipart/form-data; application/json;'
-          },
-          withcredentials: true
-        })
+        .put(
+          `http://localhost:8000/api/news/edit/${this.newsData.id}`,
+          this.newsData,
+          {
+            headers: {
+              'Content-Type': 'multipart/form-data; application/json;'
+            },
+            withcredentials: true
+          }
+        )
         .then(response => {
           if (response.status === 200) {
             this.alertType.variant = 'success'
