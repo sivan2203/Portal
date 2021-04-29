@@ -204,7 +204,8 @@ export default {
       //         }
       //     })
       //     .then(() => {
-      axios.post('http://localhost:8000/api/news/new', this.newsData, {
+      // http://localhost:8000/api/news/new
+      axios.post('http://localhost:3000/posts', this.newsData, {
         withCredentials: true
       })
       // })
@@ -214,7 +215,8 @@ export default {
     },
     findNewsById() {
       axios
-        .post(`http://localhost:8000/api/news/${this.newsData.id}`)
+        // http://localhost:8000/api/news/${this.newsData.id}
+        .get(`http://localhost:3000/posts/${this.newsData.id}`)
         .then(response => {
           this.file = response.data
           this.newsData.title = response.data.title
@@ -226,7 +228,8 @@ export default {
     },
     deleteNewsById() {
       axios
-        .delete(`http://localhost:8000/api/news/delete/${this.newsData.id}`)
+        // http://localhost:8000/api/news/delete/${this.newsData.id}
+        .delete(`http://localhost:3000/posts/${this.newsData.id}`)
         .then(response => {
           console.log(response.status)
         })
@@ -236,10 +239,8 @@ export default {
     },
     updateNews() {
       axios
-        .put(
-          `http://localhost:8000/api/news/edit/${this.newsData.id}`,
-          this.newsData
-        )
+        // http://localhost:8000/api/news/edit/${this.newsData.id}
+        .put(`http://localhost:3000/posts/${this.newsData.id}`, this.newsData)
         .then(response => {
           console.log(response.status)
         })

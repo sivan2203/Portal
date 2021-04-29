@@ -59,9 +59,10 @@ export default {
     }
   },
   methods: {
+    // http://localhost:8000/api/news/all
     getNewsData() {
       axios
-        .get('http://localhost:8000/api/news/all')
+        .get(' http://localhost:3000/posts')
         .then(response => {
           response.data.forEach(element => {
             this.textNews.push({

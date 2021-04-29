@@ -6,9 +6,9 @@ div {
 }
 #b-card {
   margin: 0 auto;
-  width: 40%;
+  width: 50vmax;
 }
 #img-preview {
   width: $imgSize;
-  height: $imgSize;
+  height: auto;
 }
