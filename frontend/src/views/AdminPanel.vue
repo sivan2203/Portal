@@ -314,14 +314,14 @@ export default {
         .then(response => {
           if (response.status === 200) {
             this.alertType.variant = 'success'
-            this.alertType.text = 'New news has been successfully delete'
+            this.alertType.text = 'New news has been successfully update'
             this.alertType.error = ''
             this.showAlert()
           }
         })
         .catch(error => {
           this.alertType.variant = 'danger'
-          this.alertType.text = `New news hasn't been delete`
+          this.alertType.text = `New news hasn't been update`
           this.alertType.error = error
           this.showAlert()
         })
