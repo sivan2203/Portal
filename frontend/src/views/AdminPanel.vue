@@ -233,16 +233,20 @@ export default {
       this.newsData.img = formData
       console.log(this.newsData.img.get('file'))
       axios
-        .post('http://localhost:3000/posts', formData, {
+        .post('http://localhost:8000/api/news/new', formData, {
           headers: {
             'Content-Type': 'multipart/form-data'
           }
         })
         .then(() => {
           // http://localhost:8000/api/news/new
+          // http://localhost:3000/posts
           axios
-            .post('http://localhost:3000/posts', this.newsData, {
-              withCredentials: true
+            .post('http://localhost:8000/api/news/new', this.newsData, {
+              headers: {
+                'Content-Type': 'multipart/form-data; application/json;'
+              },
+              withcredentials: true
             })
             .then(response => {
               if (response.status === 201) {
@@ -266,7 +270,8 @@ export default {
     findNewsById() {
       axios
         // http://localhost:8000/api/news/${this.newsData.id}
-        .get(`http://localhost:3000/posts/${this.newsData.id}`)
+        // http://localhost:3000/posts/${this.newsData.id}
+        .get(`http://localhost:8000/api/news/${this.newsData.id}`)
         .then(response => {
           if (response.status === 200) {
             this.alertType.variant = 'success'
@@ -288,7 +293,17 @@ export default {
     deleteNewsById() {
       axios
         // http://localhost:8000/api/news/delete/${this.newsData.id}
-        .delete(`http://localhost:3000/posts/${this.newsData.id}`)
+        http://localhost:3000/posts/${this.newsData.id}
+        .delete(
+          `http://localhost:8000/api/news/delete/${this.newsData.id}`,
+          {},
+          {
+            headers: {
+              'Content-Type': 'multipart/form-data; application/json;'
+            },
+            withcredentials: true
+          }
+        )
         .then(response => {
           if (response.status === 200) {
             this.newsData.id = ''
@@ -310,7 +325,13 @@ export default {
     updateNews() {
       axios
         // http://localhost:8000/api/news/edit/${this.newsData.id}
-        .put(`http://localhost:3000/posts/${this.newsData.id}`, this.newsData)
+        // http://localhost:3000/posts/${this.newsData.id}
+        .put(`http://localhost:8000/api/news/edit/${this.newsData.id}`, this.newsData, {
+          headers: {
+            'Content-Type': 'multipart/form-data; application/json;'
+          },
+          withcredentials: true
+        })
         .then(response => {
           if (response.status === 200) {
             this.alertType.variant = 'success'
