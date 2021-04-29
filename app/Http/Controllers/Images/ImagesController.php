@@ -31,8 +31,11 @@ class ImagesController extends Controller
         $hashName = $req->file('images')->hashName();
         $id = $req['id'];
 
-        $images = ImagesModel::create($req->all());
-        return response()->json($result['images'], 201);
+        $images = ImagesModel::create(array(
+            'id' => (integer) $id,
+            'images' => (string) $hashName,
+        ));
+        return response()->json($images, 201);
     }
 
     public function imagesEdit(Request $req, $id){

@@ -11,8 +11,8 @@ class ImagesModel extends Model
     protected $table='images';
     protected $fillable = [
         'id',
+        'images',
         'created_at',
         'updated_up',
-        'image'
     ];
 }
