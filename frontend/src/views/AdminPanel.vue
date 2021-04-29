@@ -25,20 +25,20 @@
               <h4 class="mb-1">
                 Loading Image
               </h4>
+              <b-media-aside>
+                <b-img
+                  id="img-preview"
+                  v-show="showPreview"
+                  :src="imagePreview"
+                />
+              </b-media-aside>
               <b-media
                 no-body
                 vertical-align="center"
                 class="flex-column flex-md-row"
               >
-                <b-media-aside>
-                  <b-img
-                    id="img-preview"
-                    v-show="showPreview"
-                    :src="imagePreview"
-                  />
-                </b-media-aside>
                 <b-media-body>
-                  <b-card-text class="my-50">
+                  <b-card-text id="b-card-text" class="my-50">
                     <b-link id="blog-image-text">
                       {{ file.name }}
                     </b-link>
@@ -184,7 +184,8 @@ export default {
       newsData: {
         id: '',
         title: '',
-        content: ''
+        content: '',
+        img: ''
       },
       alertType: {
         variant: '',
@@ -196,7 +197,8 @@ export default {
       showPreview: false,
       imagePreview: '',
       dismissSecs: 3,
-      dismissCountDown: 0
+      dismissCountDown: 0,
+      test: 'fsdf'
     }
   },
   methods: {
@@ -227,36 +229,39 @@ export default {
     submitFile() {
       const formData = new FormData() // Инициализируем наш объект FormData()
       formData.append('file', this.file) // Добавляем новое значение через append
-      // axios
-      //     .post("http://localhost:8000/api/news/new", formData, {
-      //         headers: {
-      //             "Content-Type": "multipart/form-data"
-      //         }
-      //     })
-      //     .then(() => {
-      // http://localhost:8000/api/news/new
+
+      this.newsData.img = formData
+      console.log(this.newsData.img.get('file'))
       axios
-        .post('http://localhost:3000/posts', this.newsData, {
-          withCredentials: true
-        })
-        .then(response => {
-          if (response.status === 201) {
-            this.alertType.variant = 'success'
-            this.alertType.text = 'New news has been successfully created'
-            this.alertType.error = ''
-            this.showAlert()
+        .post('http://localhost:3000/posts', formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
           }
         })
-        .catch(error => {
-          this.alertType.variant = 'danger'
-          this.alertType.text = `New news hasn't been created`
-          this.alertType.error = error
-          this.showAlert()
+        .then(() => {
+          // http://localhost:8000/api/news/new
+          axios
+            .post('http://localhost:3000/posts', this.newsData, {
+              withCredentials: true
+            })
+            .then(response => {
+              if (response.status === 201) {
+                this.alertType.variant = 'success'
+                this.alertType.text = 'New news has been successfully created'
+                this.alertType.error = ''
+                this.showAlert()
+              }
+            })
+            .catch(error => {
+              this.alertType.variant = 'danger'
+              this.alertType.text = `New news hasn't been created`
+              this.alertType.error = error
+              this.showAlert()
+            })
         })
-      // })
-      // .catch(error => {
-      //     console.log(error);
-      // })
+        .catch(error => {
+          console.log(error)
+        })
     },
     findNewsById() {
       axios

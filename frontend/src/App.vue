@@ -1,34 +1,35 @@
 <template>
-<div>
-  <b-navbar type="dark" variant="dark">
-    <b-navbar-nav style="margin: 0 auto">
-    <b-nav-item>
-      <router-link style="text-decoration: none" to="/">Home</router-link> 
-    </b-nav-item>
-    <b-nav-item>
-      <router-link style="text-decoration: none" to="/admin">Admin panel</router-link>
-    </b-nav-item>
-    </b-navbar-nav>
-  </b-navbar>
-    <router-view/>
-</div>
+  <div>
+    <b-navbar type="dark" variant="dark">
+      <b-navbar-nav style="margin: 0 auto">
+        <b-nav-item>
+          <router-link style="text-decoration: none" to="/">Home</router-link>
+        </b-nav-item>
+        <b-nav-item>
+          <router-link style="text-decoration: none" to="/admin"
+            >Admin panel</router-link
+          >
+        </b-nav-item>
+      </b-navbar-nav>
+    </b-navbar>
+    <router-view />
+  </div>
 </template>
 
 <script>
-import { BNavbar, BNavItem, BNavbarNav, } from 'bootstrap-vue'
+import { BNavbar, BNavItem, BNavbarNav } from 'bootstrap-vue'
 
-export default({
+export default {
   components: {
-    BNavbar, 
+    BNavbar,
     BNavItem,
-    BNavbarNav,
+    BNavbarNav
   }
-})
+}
 </script>
 
-
 <style>
-#app {
+/* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -47,5 +48,5 @@ export default({
 
 #nav a.router-link-exact-active {
   color: #42b983;
-}
+} */
 </style>

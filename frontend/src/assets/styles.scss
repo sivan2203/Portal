@@ -6,9 +6,13 @@ div {
 }
 #b-card {
   margin: 0 auto;
-  width: 50vmax;
+  width: 40vmax;
+  min-width: 30vmax;
 }
 #img-preview {
   width: $imgSize;
   height: auto;
+}
+#b-card-text {
+  width: 30vmax;
 }
