@@ -110,6 +110,26 @@
             </b-button>
           </b-col>
         </b-row>
+        <b-alert
+          :show="dismissCountDown"
+          dismissible
+          variant="success"
+          @dismissed="dismissCountDown = 0"
+          @dismiss-count-down="countDownChanged"
+        >
+          <p>
+            New news has been successfully created
+          </p>
+          <p>
+            The message will disappear after {{ dismissCountDown }} seconds...
+          </p>
+          <b-progress
+            variant="primary"
+            :max="dismissSecs"
+            :value="dismissCountDown"
+            height="10px"
+          ></b-progress>
+        </b-alert>
       </b-form>
       <!--/ form -->
     </b-card>
@@ -132,7 +152,9 @@ import {
   BFormFile,
   BLink,
   BButton,
-  BFormTextarea
+  BFormTextarea,
+  BProgress,
+  BAlert
 } from 'bootstrap-vue'
 import axios from 'axios'
 import '@/assets/styles.scss'
@@ -153,7 +175,9 @@ export default {
     BFormGroup,
     BFormInput,
     BFormFile,
-    BFormTextarea
+    BFormTextarea,
+    BProgress,
+    BAlert
   },
   directives: {},
   data() {
@@ -166,7 +190,9 @@ export default {
       blogFile: null,
       file: '',
       showPreview: false,
-      imagePreview: ''
+      imagePreview: '',
+      dismissSecs: 3,
+      dismissCountDown: 0
     }
   },
   methods: {
@@ -205,9 +231,16 @@ export default {
       //     })
       //     .then(() => {
       // http://localhost:8000/api/news/new
-      axios.post('http://localhost:3000/posts', this.newsData, {
-        withCredentials: true
-      })
+      axios
+        .post('http://localhost:3000/posts', this.newsData, {
+          withCredentials: true
+        })
+        .then(response => {
+          if (response.status === 201) {
+            console.log('success')
+            this.showAlert()
+          }
+        })
       // })
       // .catch(error => {
       //     console.log(error);
@@ -247,6 +280,12 @@ export default {
         .catch(error => {
           console.log(error)
         })
+    },
+    countDownChanged(dismissCountDown) {
+      this.dismissCountDown = dismissCountDown
+    },
+    showAlert() {
+      this.dismissCountDown = this.dismissSecs
     }
   }
 }
