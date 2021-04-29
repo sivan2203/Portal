@@ -113,18 +113,17 @@
         <b-alert
           :show="dismissCountDown"
           dismissible
-          variant="success"
+          :variant="alertType.variant"
           @dismissed="dismissCountDown = 0"
           @dismiss-count-down="countDownChanged"
         >
-          <p>
-            New news has been successfully created
-          </p>
+          <p>{{ alertType.text }}</p>
+          <p>{{ alertType.error }}</p>
           <p>
             The message will disappear after {{ dismissCountDown }} seconds...
           </p>
           <b-progress
-            variant="primary"
+            :variant="alertType.variant"
             :max="dismissSecs"
             :value="dismissCountDown"
             height="10px"
@@ -187,6 +186,11 @@ export default {
         title: '',
         content: ''
       },
+      alertType: {
+        variant: '',
+        text: `New news hasn't been created`,
+        error: ''
+      },
       blogFile: null,
       file: '',
       showPreview: false,
@@ -237,9 +241,17 @@ export default {
         })
         .then(response => {
           if (response.status === 201) {
-            console.log('success')
+            this.alertType.variant = 'success'
+            this.alertType.text = 'New news has been successfully created'
+            this.alertType.error = ''
             this.showAlert()
           }
+        })
+        .catch(error => {
+          this.alertType.variant = 'danger'
+          this.alertType.text = `New news hasn't been created`
+          this.alertType.error = error
+          this.showAlert()
         })
       // })
       // .catch(error => {
@@ -251,12 +263,21 @@ export default {
         // http://localhost:8000/api/news/${this.newsData.id}
         .get(`http://localhost:3000/posts/${this.newsData.id}`)
         .then(response => {
-          this.file = response.data
-          this.newsData.title = response.data.title
-          this.newsData.content = response.data.content
+          if (response.status === 200) {
+            this.alertType.variant = 'success'
+            this.alertType.text = 'New news has been successfully find'
+            this.alertType.error = ''
+            this.showAlert()
+            this.file = response.data
+            this.newsData.title = response.data.title
+            this.newsData.content = response.data.content
+          }
         })
         .catch(error => {
-          console.log(error)
+          this.alertType.variant = 'danger'
+          this.alertType.text = `New news hasn't been find`
+          this.alertType.error = error
+          this.showAlert()
         })
     },
     deleteNewsById() {
@@ -264,10 +285,21 @@ export default {
         // http://localhost:8000/api/news/delete/${this.newsData.id}
         .delete(`http://localhost:3000/posts/${this.newsData.id}`)
         .then(response => {
-          console.log(response.status)
+          if (response.status === 200) {
+            this.newsData.id = ''
+            this.newsData.content = ''
+            this.newsData.title = ''
+            this.alertType.variant = 'success'
+            this.alertType.text = 'New news has been successfully delete'
+            this.alertType.error = ''
+            this.showAlert()
+          }
         })
         .catch(error => {
-          console.log(error)
+          this.alertType.variant = 'danger'
+          this.alertType.text = `New news hasn't been delete`
+          this.alertType.error = error
+          this.showAlert()
         })
     },
     updateNews() {
@@ -275,10 +307,18 @@ export default {
         // http://localhost:8000/api/news/edit/${this.newsData.id}
         .put(`http://localhost:3000/posts/${this.newsData.id}`, this.newsData)
         .then(response => {
-          console.log(response.status)
+          if (response.status === 200) {
+            this.alertType.variant = 'success'
+            this.alertType.text = 'New news has been successfully delete'
+            this.alertType.error = ''
+            this.showAlert()
+          }
         })
         .catch(error => {
-          console.log(error)
+          this.alertType.variant = 'danger'
+          this.alertType.text = `New news hasn't been delete`
+          this.alertType.error = error
+          this.showAlert()
         })
     },
     countDownChanged(dismissCountDown) {

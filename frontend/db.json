@@ -11,129 +11,20 @@
       "content": "Текст поста 3"
     },
     {
-      "id": 3,
-      "title": "test",
-      "content": "test 1"
+      "id": 3
     },
     {
       "id": 4,
-      "title": "2",
-      "content": "4"
+      "title": "123",
+      "content": "eq"
     },
     {
-      "id": 5,
-      "title": "4",
-      "content": "5"
+      "id": 5
     },
     {
       "id": 6,
-      "title": "4",
-      "content": "5"
-    },
-    {
-      "id": 7,
-      "title": "3",
-      "content": "4"
-    },
-    {
-      "id": 8,
-      "title": "2",
-      "content": "5"
-    },
-    {
-      "id": 9,
-      "title": "12",
-      "content": "31"
-    },
-    {
-      "id": 10,
-      "title": "31",
-      "content": "4"
-    },
-    {
-      "id": 11,
-      "title": "32",
-      "content": "342"
-    },
-    {
-      "id": 12,
-      "title": "321",
-      "content": "213"
-    },
-    {
-      "id": 13,
-      "title": "321",
-      "content": "213"
-    },
-    {
-      "id": 14,
-      "title": "321",
-      "content": "213"
-    },
-    {
-      "id": 15,
-      "title": "321",
-      "content": "213"
-    },
-    {
-      "id": 16,
-      "title": "321",
-      "content": "213"
-    },
-    {
-      "id": 17,
-      "title": "321",
-      "content": "213"
-    },
-    {
-      "id": 18,
-      "title": "321",
-      "content": "213"
-    },
-    {
-      "id": 19,
-      "title": "321",
-      "content": "213"
-    },
-    {
-      "id": 20,
-      "title": "",
-      "content": ""
-    },
-    {
-      "id": 21,
-      "title": "",
-      "content": ""
-    },
-    {
-      "id": 22,
-      "title": "",
-      "content": ""
-    },
-    {
-      "id": 23,
-      "title": "",
-      "content": ""
-    },
-    {
-      "id": 24,
-      "title": "31",
-      "content": "43"
-    },
-    {
-      "id": 25,
-      "title": "31",
-      "content": "r4"
-    },
-    {
-      "id": 26,
-      "title": "das",
-      "content": "wqe"
-    },
-    {
-      "id": 27,
-      "title": "das",
-      "content": "wqe"
+      "title": "qwe",
+      "content": "qwe"
     }
   ]
 }
