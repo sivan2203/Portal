@@ -39,17 +39,7 @@ export default {
   data() {
     return {
       textNews: [
-        {
-          id: 1,
-          title: 'Card Title',
-          content:
-            "Some quick example text to build on the card title and make up the bulk of the card's content."
-        },
-        {
-          id: 2,
-          title: 'Lorem Title',
-          content: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident odit dolorum sint aperiam, ipsa consequatur nesciunt alias omnis voluptas libero perspiciatis ipsam saepe labore velit accusantium veniam illo, voluptatem adipisci.`
-        }
+
       ]
     }
   },

@@ -41,20 +41,35 @@ class ImagesController extends Controller
     public function imagesEdit(Request $req, $id){
 
         $images = ImagesModel::find($id);
+        $hashName = $req->file('images')->hashName();
+
         if(is_null($images)){
             return response()->json(['error' => true, 'message' => 'Not found'], 404);
         }
-        $images->update($req->all());
+        $hashNameOld = $images['images'];
+        $deletePath = 'public/uploads/images/'.$hashNameOld;
+        Storage::delete($deletePath);
+        $result = $req->file('images')->store('public/uploads/images');
+        $hashName = $req->file('images')->hashName();
+        $this->imagesDelete($id);
+        $images = ImagesModel::create(array(
+            'id' => (integer) $id,
+            'images' => (string) $hashName,
+        ));
         return response()->json($images, 200);
     }
 
-    public function imagesDelete(Request $req, $id){
+    public function imagesDelete($id){
         $images = ImagesModel::find($id);
         if(is_null($images)){
             return response()->json(['error' => true, 'message' => 'Not found'], 404);
+        } else {
+            $hashName = $images['images'];
+            $deletePath = 'public/uploads/images/'.$hashName;
+            Storage::delete($deletePath);
         }
         $images->delete();
-        return response()->json('', 204);
+        return response()->json(['status' => 'deleted'], 204);
     }
 
 
