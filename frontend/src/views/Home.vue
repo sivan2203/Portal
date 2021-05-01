@@ -4,8 +4,9 @@
       id="b-card"
       v-for="(title, item) in textNews"
       :key="item"
-      :title="title.title"
-      img-src="https://picsum.photos/600/300/?image=25"
+      :header="`news id - ${title.id}`"
+      :title="`News id: ${title.id} ${title.title}`"
+      :img-src="title.img"
       img-alt="Image"
       img-top
       tag="article"
@@ -43,12 +44,14 @@ export default {
           id: 1,
           title: 'Card Title',
           content:
-            "Some quick example text to build on the card title and make up the bulk of the card's content."
+            "Some quick example text to build on the card title and make up the bulk of the card's content.",
+          img: 'https://picsum.photos/600/300/?image=24'
         },
         {
           id: 2,
           title: 'Lorem Title',
-          content: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident odit dolorum sint aperiam, ipsa consequatur nesciunt alias omnis voluptas libero perspiciatis ipsam saepe labore velit accusantium veniam illo, voluptatem adipisci.`
+          content: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident odit dolorum sint aperiam, ipsa consequatur nesciunt alias omnis voluptas libero perspiciatis ipsam saepe labore velit accusantium veniam illo, voluptatem adipisci.`,
+          img: 'https://picsum.photos/600/300/?image=25'
         }
       ]
     }
@@ -75,6 +78,11 @@ export default {
         .catch(error => {
           console.log(error)
         })
+      axios.get('http://localhost:8000/api/images/all').then(response => {
+        response.data.forEach(element => {
+          this.textNews.img = element.path
+        })
+      })
     }
   }
 }
