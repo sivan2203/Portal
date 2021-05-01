@@ -44,14 +44,12 @@ export default {
           id: 1,
           title: 'Card Title',
           content:
-            "Some quick example text to build on the card title and make up the bulk of the card's content.",
-          img: 'https://picsum.photos/600/300/?image=24'
+            "Some quick example text to build on the card title and make up the bulk of the card's content."
         },
         {
           id: 2,
           title: 'Lorem Title',
-          content: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident odit dolorum sint aperiam, ipsa consequatur nesciunt alias omnis voluptas libero perspiciatis ipsam saepe labore velit accusantium veniam illo, voluptatem adipisci.`,
-          img: 'https://picsum.photos/600/300/?image=25'
+          content: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident odit dolorum sint aperiam, ipsa consequatur nesciunt alias omnis voluptas libero perspiciatis ipsam saepe labore velit accusantium veniam illo, voluptatem adipisci.`
         }
       ]
     }

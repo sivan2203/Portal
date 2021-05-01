@@ -306,7 +306,7 @@ export default {
           }
         )
         .then(response => {
-          if (response.status === 200) {
+          if (response.status === 204) {
             this.newsData.id = ''
             this.newsData.content = ''
             this.newsData.title = ''

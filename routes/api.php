@@ -40,7 +40,7 @@ Route::delete('comments/delete/{id}', 'Comments\CommentsController@commentsDelet
 Route::get('images/all', 'Images\ImagesController@images');
 Route::get('images/{id}', 'Images\ImagesController@imagesById');
 Route::post('images/new', 'Images\ImagesController@imagesSave');
-Route::put('images/edit/{id}', 'Images\ImagesController@imagesEdit');
+Route::post('images/edit/{id}', 'Images\ImagesController@imagesEdit');
 Route::delete('images/delete/{id}', 'Images\ImagesController@imagesDelete');
 
 Route::post('upload', [FileController::class, 'upload'] );
