@@ -3,50 +3,52 @@
     <b-navbar type="dark" variant="dark">
       <b-navbar-nav style="margin: 0 auto">
         <b-nav-item>
-          <router-link style="text-decoration: none" to="/">Home</router-link>
+          <router-link style="text-decoration: none" to="/">
+            <b-button variant="primary" size="lg" class="mr-4">
+              <b-icon icon="file-post" aria-hidden="true" /> News
+            </b-button>
+          </router-link>
         </b-nav-item>
         <b-nav-item>
           <router-link style="text-decoration: none" to="/admin"
-            >Admin panel</router-link
+            ><b-button variant="primary" size="lg" class="ml-4">
+              <b-icon icon="person-circle" aria-hidden="true" /> Admin Panel
+            </b-button></router-link
           >
         </b-nav-item>
       </b-navbar-nav>
     </b-navbar>
     <router-view />
+    <footer>
+      <span
+        >COPYRIGHT © 2021
+        <b-link href="https://vk.com/e_yurov">e.yurov</b-link>, All databases
+        Reserved by
+        <b-link href="https://vk.com/sivan9458">sivan9458</b-link>
+      </span>
+    </footer>
   </div>
 </template>
 
 <script>
-import { BNavbar, BNavItem, BNavbarNav } from 'bootstrap-vue'
+import {
+  BNavbar,
+  BNavItem,
+  BNavbarNav,
+  BIcon,
+  BButton,
+  BLink
+} from 'bootstrap-vue'
+import '@/assets/styles.scss'
 
 export default {
   components: {
     BNavbar,
     BNavItem,
-    BNavbarNav
+    BNavbarNav,
+    BIcon,
+    BButton,
+    BLink
   }
 }
 </script>
-
-<style>
-/* #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-} */
-</style>

@@ -1,7 +1,5 @@
 @import './variables.scss';
 div {
-  margin-top: 1%;
-  margin: 0 auto;
   border-radius: 5px;
 }
 #b-card {
@@ -15,4 +13,30 @@ div {
 }
 #b-card-text {
   width: 30vmax;
+}
+nav {
+  font-size: 4vmin;
+  ul {
+    li {
+      a {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        letter-spacing: 0.5vmin;
+      }
+    }
+  }
+}
+textarea {
+  min-height: 10vmax;
+}
+footer {
+  margin: 0.5vmax 0 0.5vmax 0;
+  text-align: center;
+  span {
+    a:hover {
+      text-decoration: none;
+    }
+    color: #999;
+    letter-spacing: 0.2vmin;
+    font-size: 1rem;
+  }
 }

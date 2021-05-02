@@ -1,22 +1,26 @@
 <template>
   <div class="about">
-    <b-card id="b-card" class="blog-edit-wrapper">
+    <b-card id="b-card" class="blog-edit-wrapper mt-2">
       <!-- form -->
       <b-form class="mt-2">
         <b-row>
-          <b-col md="2">
-            <b-form-group label="News id">
+          <b-col md="3">
+            <b-form-group label="News id" label-class="font-weight-bold">
               <b-form-input v-model="newsData.id" />
             </b-form-group>
           </b-col>
 
-          <b-col md="6">
-            <b-form-group label="News Title" class="mb-2">
+          <b-col md="9">
+            <b-form-group
+              label="News Title"
+              label-class="font-weight-bold"
+              class="mb-2"
+            >
               <b-form-input v-model="newsData.title" />
             </b-form-group>
           </b-col>
           <b-col md="12">
-            <b-form-group label="News Text">
+            <b-form-group label="News Text" label-class="font-weight-bold">
               <b-form-textarea v-model="newsData.content" />
             </b-form-group>
           </b-col>
@@ -43,11 +47,11 @@
                       {{ file.name }}
                     </b-link>
                   </b-card-text>
-                  <div class="d-inline-block">
+                  <b-button-group class="d-inline-block">
                     <b-button
-                      variant="primary"
+                      variant="outline-primary"
                       size="sm"
-                      class="mb-75 mr-75"
+                      class="mb-75 mr-1"
                       @click="$refs.file.$el.click()"
                     >
                       Загрузить
@@ -63,51 +67,49 @@
                     />
                     <!-- reset -->
                     <b-button
-                      variant="outline-secondary"
+                      variant="outline-danger"
                       size="sm"
                       class="mb-75 mr-75"
                       @click="resetImageForm"
                     >
                       Сбросить
                     </b-button>
-                  </div>
+                  </b-button-group>
                 </b-media-body>
               </b-media>
             </div>
           </b-col>
           <b-col cols="12" class="mt-50">
-            <b-button
-              block
-              variant="outline-primary"
-              class="mr-1"
-              @click="submitFile"
-            >
-              Create
-            </b-button>
-            <b-button
-              block
-              variant="outline-primary"
-              @click="findNewsById"
-              class="mr-1"
-            >
-              Find News by Id
-            </b-button>
-            <b-button
-              block
-              variant="outline-primary"
-              @click="updateNews"
-              class="mr-1"
-            >
-              Update News
-            </b-button>
-            <b-button
-              block
-              @click="deleteNewsById"
-              variant="outline-danger"
-              class="mr-1"
-            >
-              Delete News
-            </b-button>
+            <b-button-group style="display: flex">
+              <b-button
+                variant="outline-primary"
+                class="mr-1"
+                @click="submitFile"
+              >
+                Create
+              </b-button>
+              <b-button
+                variant="outline-primary"
+                @click="findNewsById"
+                class="mr-1"
+              >
+                Find News by Id
+              </b-button>
+              <b-button
+                variant="outline-primary"
+                @click="updateNews"
+                class="mr-1"
+              >
+                Update News
+              </b-button>
+              <b-button
+                @click="deleteNewsById"
+                variant="outline-danger"
+                class="mr-1"
+              >
+                Delete News
+              </b-button>
+            </b-button-group>
           </b-col>
         </b-row>
         <b-alert
@@ -153,7 +155,8 @@ import {
   BButton,
   BFormTextarea,
   BProgress,
-  BAlert
+  BAlert,
+  BButtonGroup
 } from 'bootstrap-vue'
 import axios from 'axios'
 import '@/assets/styles.scss'
@@ -176,7 +179,8 @@ export default {
     BFormFile,
     BFormTextarea,
     BProgress,
-    BAlert
+    BAlert,
+    BButtonGroup
   },
   directives: {},
   data() {

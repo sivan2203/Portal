@@ -4,11 +4,11 @@
       id="b-card"
       v-for="(title, item) in textNews"
       :key="item"
-      :header="`news id - ${title.id}`"
-      :title="`News id: ${title.id} ${title.title}`"
-      :img-src="title.img"
+      :title="`${title.title}`"
+      :sub-title="`News id: ${title.id}`"
+      img-src="https://picsum.photos/600/300/?image=25"
       img-alt="Image"
-      img-top
+      img-bottom
       tag="article"
       class="mt-2"
     >
@@ -17,8 +17,8 @@
           {{ title.content }}
         </b-card-text>
       </b-collapse>
-      <b-button v-b-toggle="`collapse${title.id}`" variant="primary"
-        >See more</b-button
+      <span v-b-toggle="`collapse${title.id}`" class="text-primary"
+        >Read news details</span
       >
     </b-card>
   </div>
@@ -26,13 +26,12 @@
 
 <script>
 // @ is an alias to /src
-import { BButton, BCardText, BCard, BCollapse } from 'bootstrap-vue'
+import { BCardText, BCard, BCollapse } from 'bootstrap-vue'
 import axios from 'axios'
 import '@/assets/styles.scss'
 
 export default {
   components: {
-    BButton,
     BCardText,
     BCard,
     BCollapse
@@ -56,6 +55,7 @@ export default {
   },
   computed: {
     test() {
+      console.log(this.textNews)
       return this.getNewsData()
     }
   },
