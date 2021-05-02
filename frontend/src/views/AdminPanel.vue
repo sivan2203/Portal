@@ -113,6 +113,7 @@
           </b-col>
         </b-row>
         <b-alert
+          class="mt-2"
           :show="dismissCountDown"
           dismissible
           :variant="alertType.variant"
@@ -128,7 +129,7 @@
             :variant="alertType.variant"
             :max="dismissSecs"
             :value="dismissCountDown"
-            height="10px"
+            height="5px"
           ></b-progress>
         </b-alert>
       </b-form>
@@ -204,8 +205,7 @@ export default {
       showPreview: false,
       imagePreview: '',
       dismissSecs: 3,
-      dismissCountDown: 0,
-      test: 'fsdf'
+      dismissCountDown: 0
     }
   },
   methods: {

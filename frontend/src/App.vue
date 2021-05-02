@@ -18,8 +18,8 @@
         </b-nav-item>
       </b-navbar-nav>
     </b-navbar>
-    <router-view />
-    <footer>
+    <router-view class="mb-4" />
+    <footer class="footer fixed-bottom">
       <span
         >COPYRIGHT © 2021
         <b-link href="https://vk.com/e_yurov">e.yurov</b-link>, All databases
