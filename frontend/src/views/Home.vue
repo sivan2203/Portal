@@ -1,12 +1,12 @@
 <template>
-  <div :optios="test" class="text-dark">
+  <div class="text-dark">
     <b-card
       id="b-card"
       v-for="(title, item) in textNews"
       :key="item"
       :title="`${title.title}`"
       :sub-title="`News id: ${title.id}`"
-      :img-src="title.img"
+      :img-src="`${title.img}`"
       img-alt="Image"
       img-bottom
       tag="article"
@@ -41,34 +41,31 @@ export default {
       textNews: []
     }
   },
-  computed: {
-    test() {
-      return this.getNewsData()
-    }
+  mounted() {
+      this.getNewsData()
+
   },
   methods: {
     // http://localhost:8000/api/news/all
-    getNewsData() {
-      axios
-        .get('http://localhost:8000/api/news/all')
-        .then(response => {
-          response.data.forEach(element => {
-            this.textNews.push({
-              id: element.id,
-              title: element.title,
-              content: element.content
-            })
-          })
-        })
-        .catch(error => {
-          console.log(error)
-        })
-      axios.get('http://localhost:8000/api/images/all').then(response => {
-        response.data.forEach(element => {
-          this.textNews.img = element.images
-        })
-      })
-    }
+      getNewsData() {
+          axios
+              .get('http://localhost:8000/api/news/all')
+              .then(response => {
+                  response.data.forEach(element => {
+                      axios.get(`http://localhost:8000/api/images/${element.id}`).then(respon => {
+                          this.textNews.push({
+                              id: element.id,
+                              title: element.title,
+                              content: element.content,
+                              img: respon.data.image
+                          })
+                      })
+                  })
+              })
+              .catch(error => {
+                  console.log(error)
+              })
+      }
   }
 }
 </script>

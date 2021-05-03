@@ -27,9 +27,13 @@ class ImagesController extends Controller
     }
 
     public function imagesSave(Request $req){
+        $id = $req['id'];
+        if(is_null($id)){
+            return response()->json(['error'=> 'id missing'], 400);
+        }
         $result = $req->file('images')->store('public/uploads/images');
         $hashName = $req->file('images')->hashName();
-        $id = $req['id'];
+
 
         $images = ImagesModel::create(array(
             'id' => (integer) $id,

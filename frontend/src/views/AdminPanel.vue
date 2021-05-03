@@ -242,17 +242,18 @@ export default {
       axios
         .post('http://localhost:8000/api/news/new', this.newsData, {
           headers: {
-            'Content-Type': 'multipart/form-data; application/json;'
+            'Content-Type':  'application/json; '
           },
           withcredentials: true
         })
         .then(response => {
           if (response.status === 201) {
             this.images.id = response.data.id
+              // console.log(response.data.title)
             axios
               .post('http://localhost:8000/api/images/new', this.images, {
                 headers: {
-                  'Content-Type': 'multipart/form-data; application/json;'
+                  'Content-Type': 'multipart/form-data; application/x-www-form-urlencoded'
                 },
                 withcredentials: true
               })
