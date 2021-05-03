@@ -6,7 +6,7 @@
       :key="item"
       :title="`${title.title}`"
       :sub-title="`News id: ${title.id}`"
-      img-src="https://picsum.photos/600/300/?image=25"
+      :img-src="title.img"
       img-alt="Image"
       img-bottom
       tag="article"
@@ -38,24 +38,11 @@ export default {
   },
   data() {
     return {
-      textNews: [
-        {
-          id: 1,
-          title: 'Card Title',
-          content:
-            "Some quick example text to build on the card title and make up the bulk of the card's content."
-        },
-        {
-          id: 2,
-          title: 'Lorem Title',
-          content: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident odit dolorum sint aperiam, ipsa consequatur nesciunt alias omnis voluptas libero perspiciatis ipsam saepe labore velit accusantium veniam illo, voluptatem adipisci.`
-        }
-      ]
+      textNews: []
     }
   },
   computed: {
     test() {
-      console.log(this.textNews)
       return this.getNewsData()
     }
   },
@@ -78,7 +65,7 @@ export default {
         })
       axios.get('http://localhost:8000/api/images/all').then(response => {
         response.data.forEach(element => {
-          this.textNews.img = element.path
+          this.textNews.img = element.images
         })
       })
     }

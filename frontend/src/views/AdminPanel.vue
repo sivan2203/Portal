@@ -198,7 +198,7 @@ export default {
       },
       images: {
         id: null,
-        img: null
+        images: null
       },
       blogFile: null,
       file: '',
@@ -236,7 +236,7 @@ export default {
     submitFile() {
       const formData = new FormData() // Инициализируем наш объект FormData()
       formData.append('file', this.file) // Добавляем новое значение через append
-      this.images.img = formData
+      this.images.images = formData
       // http://localhost:8000/api/news/new
       // http://localhost:3000/posts
       axios
@@ -253,7 +253,8 @@ export default {
               .post('http://localhost:8000/api/images/new', this.images, {
                 headers: {
                   'Content-Type': 'multipart/form-data; application/json;'
-                }
+                },
+                withcredentials: true
               })
               .then(respon => {
                 if (respon === 201) {
@@ -262,6 +263,12 @@ export default {
                   this.alertType.error = ''
                   this.showAlert()
                 }
+              })
+              .catch(err => {
+                this.alertType.variant = 'danger'
+                this.alertType.text = `New news hasn't been created`
+                this.alertType.err = err
+                this.showAlert()
               })
           }
         })
