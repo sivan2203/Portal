@@ -160,6 +160,7 @@ import {
   BButtonGroup
 } from 'bootstrap-vue'
 import axios from 'axios'
+import FormData from 'form-data'
 import '@/assets/styles.scss'
 
 export default {
@@ -235,26 +236,26 @@ export default {
     },
     submitFile() {
       const formData = new FormData() // Инициализируем наш объект FormData()
-      formData.append('file', this.file) // Добавляем новое значение через append
+      formData.append('images', this.file) // Добавляем новое значение через append
       this.images.images = formData
       // http://localhost:8000/api/news/new
       // http://localhost:3000/posts
       axios
         .post('http://localhost:8000/api/news/new', this.newsData, {
           headers: {
-            'Content-Type':  'application/json; '
+            'Content-Type':  'application/json;'
           },
           withcredentials: true
         })
         .then(response => {
           if (response.status === 201) {
-            this.images.id = response.data.id
+              formData.append('id', response.data.id)
               // console.log(response.data.title)
             axios
-              .post('http://localhost:8000/api/images/new', this.images, {
-                headers: {
-                  'Content-Type': 'multipart/form-data; application/x-www-form-urlencoded'
-                },
+              .post('http://localhost:8000/api/images/new', formData, {
+                  headers: {
+                      'Content-Type': `multipart/form-data;`,
+                  },
                 withcredentials: true
               })
               .then(respon => {
