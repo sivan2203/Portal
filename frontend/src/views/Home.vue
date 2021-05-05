@@ -50,6 +50,7 @@ export default {
       axios
         .get('http://localhost:8000/api/news/all')
         .then(response => {
+          console.log(response.data)
           response.data.forEach(element => {
             axios
               .get(`http://localhost:8000/api/images/${element.id}`)
@@ -58,6 +59,7 @@ export default {
                   id: element.id,
                   title: element.title,
                   content: element.content,
+                  date: element.created_at,
                   img: respon.data.image
                 })
               })

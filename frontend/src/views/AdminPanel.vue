@@ -376,32 +376,16 @@ export default {
             const formData = new FormData() // Инициализируем наш объект FormData()
             formData.append('images', this.file) // Добавляем новое значение через append
             this.images.images = formData
-            axios
-              .post(
-                `http://localhost:8000/api/images/edit/${this.newsData.id}`,
-                formData,
-                {
-                  headers: {
-                    'Content-Type': `multipart/form-data;`
-                  },
-                  withcredentials: true
-                }
-              )
-              .then(respon => {
-                if (respon.status === 201) {
-                  this.alertType.variant = 'success'
-                  this.alertType.text = 'New news has been successfully update'
-                  this.alertType.error = ''
-                  this.showAlert()
-                }
-              })
-              .catch(err => {
-                this.alertType.variant = 'danger'
-                this.alertType.text = `New news hasn't been update`
-                this.alertType.err = err
-                this.showAlert()
-              })
-
+            axios.post(
+              `http://localhost:8000/api/images/edit/${this.newsData.id}`,
+              formData,
+              {
+                headers: {
+                  'Content-Type': `multipart/form-data;`
+                },
+                withcredentials: true
+              }
+            )
             this.alertType.variant = 'success'
             this.alertType.text = 'New news has been successfully update'
             this.alertType.error = ''
