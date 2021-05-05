@@ -238,7 +238,6 @@ export default {
       const formData = new FormData() // Инициализируем наш объект FormData()
       formData.append('images', this.file) // Добавляем новое значение через append
       this.images.images = formData
-      // http://localhost:8000/api/news/new
       // http://localhost:3000/posts
       axios
         .post('http://localhost:8000/api/news/new', this.newsData, {
@@ -250,7 +249,6 @@ export default {
         .then(response => {
           if (response.status === 201) {
             formData.append('id', response.data.id)
-            // console.log(response.data.title)
             axios
               .post('http://localhost:8000/api/images/new', formData, {
                 headers: {
@@ -259,7 +257,7 @@ export default {
                 withcredentials: true
               })
               .then(respon => {
-                if (respon === 201) {
+                if (respon.status === 201) {
                   this.alertType.variant = 'success'
                   this.alertType.text = 'New news has been successfully created'
                   this.alertType.error = ''
@@ -310,7 +308,33 @@ export default {
     },
     deleteNewsById() {
       axios
-        // http://localhost:8000/api/news/delete/${this.newsData.id}
+        .delete(
+          `http://localhost:8000/api/images/delete/${this.newsData.id}`,
+          {},
+          {
+            headers: {
+              'Content-Type': 'multipart/form-data; application/json;'
+            },
+            withcredentials: true
+          }
+        )
+        .then(response => {
+          if (response.status === 204) {
+            this.showPreview = false
+            this.imagePreview = ''
+            this.alertType.variant = 'success'
+            this.alertType.text = 'New news has been successfully delete'
+            this.alertType.error = ''
+            this.showAlert()
+          }
+        })
+        .catch(error => {
+          this.alertType.variant = 'danger'
+          this.alertType.text = `New news hasn't been delete`
+          this.alertType.error = error
+          this.showAlert()
+        })
+      axios
         // http://localhost:3000/posts/${this.newsData.id}
         .delete(
           `http://localhost:8000/api/news/delete/${this.newsData.id}`,
@@ -342,7 +366,6 @@ export default {
     },
     updateNews() {
       axios
-        // http://localhost:8000/api/news/edit/${this.newsData.id}
         // http://localhost:3000/posts/${this.newsData.id}
         .put(
           `http://localhost:8000/api/news/edit/${this.newsData.id}`,
@@ -356,6 +379,35 @@ export default {
         )
         .then(response => {
           if (response.status === 200) {
+            const formData = new FormData() // Инициализируем наш объект FormData()
+            formData.append('images', this.file) // Добавляем новое значение через append
+            this.images.images = formData
+            axios
+              .post(
+                `http://localhost:8000/api/images/${this.newsData.id}`,
+                formData,
+                {
+                  headers: {
+                    'Content-Type': `multipart/form-data;`
+                  },
+                  withcredentials: true
+                }
+              )
+              .then(respon => {
+                if (respon.status === 201) {
+                  this.alertType.variant = 'success'
+                  this.alertType.text = 'New news has been successfully update'
+                  this.alertType.error = ''
+                  this.showAlert()
+                }
+              })
+              .catch(err => {
+                this.alertType.variant = 'danger'
+                this.alertType.text = `New news hasn't been update`
+                this.alertType.err = err
+                this.showAlert()
+              })
+
             this.alertType.variant = 'success'
             this.alertType.text = 'New news has been successfully update'
             this.alertType.error = ''
