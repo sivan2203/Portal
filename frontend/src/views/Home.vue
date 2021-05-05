@@ -42,30 +42,31 @@ export default {
     }
   },
   mounted() {
-      this.getNewsData()
-
+    this.getNewsData()
   },
   methods: {
     // http://localhost:8000/api/news/all
-      getNewsData() {
-          axios
-              .get('http://localhost:8000/api/news/all')
-              .then(response => {
-                  response.data.forEach(element => {
-                      axios.get(`http://localhost:8000/api/images/${element.id}`).then(respon => {
-                          this.textNews.push({
-                              id: element.id,
-                              title: element.title,
-                              content: element.content,
-                              img: respon.data.image
-                          })
-                      })
-                  })
+    getNewsData() {
+      axios
+        .get('http://localhost:8000/api/news/all')
+        .then(response => {
+          response.data.forEach(element => {
+            axios
+              .get(`http://localhost:8000/api/images/${element.id}`)
+              .then(respon => {
+                this.textNews.push({
+                  id: element.id,
+                  title: element.title,
+                  content: element.content,
+                  img: respon.data.image
+                })
               })
-              .catch(error => {
-                  console.log(error)
-              })
-      }
+          })
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    }
   }
 }
 </script>

@@ -5,12 +5,14 @@
       <b-form class="mt-2">
         <b-row>
           <b-col md="3">
-            <b-form-group label="News id" label-class="font-weight-bold">
-              <b-form-input v-model="newsData.id" />
-            </b-form-group>
+            <b-modal @ok="findNewsById" id="modal-findNewsById" centered>
+              <b-form-group label="News id" label-class="font-weight-bold">
+                <b-form-input v-model="newsData.id" />
+              </b-form-group>
+            </b-modal>
           </b-col>
 
-          <b-col md="9">
+          <b-col md="12">
             <b-form-group
               label="News Title"
               label-class="font-weight-bold"
@@ -89,8 +91,8 @@
                 Create
               </b-button>
               <b-button
+                v-b-modal.modal-findNewsById
                 variant="outline-primary"
-                @click="findNewsById"
                 class="mr-1"
               >
                 Find News by Id
@@ -157,7 +159,9 @@ import {
   BFormTextarea,
   BProgress,
   BAlert,
-  BButtonGroup
+  BButtonGroup,
+  BModal,
+  VBModal
 } from 'bootstrap-vue'
 import axios from 'axios'
 import FormData from 'form-data'
@@ -182,9 +186,12 @@ export default {
     BFormTextarea,
     BProgress,
     BAlert,
-    BButtonGroup
+    BButtonGroup,
+    BModal
   },
-  directives: {},
+  directives: {
+    'b-modal': VBModal
+  },
   data() {
     return {
       newsData: {
