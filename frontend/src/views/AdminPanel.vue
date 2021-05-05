@@ -243,19 +243,19 @@ export default {
       axios
         .post('http://localhost:8000/api/news/new', this.newsData, {
           headers: {
-            'Content-Type':  'application/json;'
+            'Content-Type': 'application/json;'
           },
           withcredentials: true
         })
         .then(response => {
           if (response.status === 201) {
-              formData.append('id', response.data.id)
-              // console.log(response.data.title)
+            formData.append('id', response.data.id)
+            // console.log(response.data.title)
             axios
               .post('http://localhost:8000/api/images/new', formData, {
-                  headers: {
-                      'Content-Type': `multipart/form-data;`,
-                  },
+                headers: {
+                  'Content-Type': `multipart/form-data;`
+                },
                 withcredentials: true
               })
               .then(respon => {
@@ -283,19 +283,23 @@ export default {
     },
     findNewsById() {
       axios
-        // http://localhost:8000/api/news/${this.newsData.id}
-        // http://localhost:3000/posts/${this.newsData.id}
         .get(`http://localhost:8000/api/news/${this.newsData.id}`)
         .then(response => {
-          if (response.status === 200) {
-            this.alertType.variant = 'success'
-            this.alertType.text = 'New news has been successfully find'
-            this.alertType.error = ''
-            this.showAlert()
-            this.file = response.data
-            this.newsData.title = response.data.title
-            this.newsData.content = response.data.content
-          }
+          axios
+            .get(`http://localhost:8000/api/images/${this.newsData.id}`)
+            .then(respon => {
+              if (respon.status === 200) {
+                this.alertType.variant = 'success'
+                this.alertType.text = 'New news has been successfully find'
+                this.alertType.error = ''
+                this.showAlert()
+                this.file = response.data
+                this.newsData.title = response.data.title
+                this.newsData.content = response.data.content
+                this.imagePreview = respon.data.image
+                this.showPreview = true
+              }
+            })
         })
         .catch(error => {
           this.alertType.variant = 'danger'
