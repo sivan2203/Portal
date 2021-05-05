@@ -8,11 +8,11 @@ div {
   min-width: 30vmax;
 }
 #img-preview {
-  width: $imgSize;
-  height: auto;
-}
-#b-card-text {
+  margin: 0 auto;
   width: 30vmax;
+  min-width: 25vmax;
+  height: auto;
+  margin-bottom: 1vmax;
 }
 nav {
   font-size: 4vmin;

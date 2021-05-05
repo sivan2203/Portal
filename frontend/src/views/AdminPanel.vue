@@ -31,24 +31,19 @@
               <h4 class="mb-1">
                 Loading Image
               </h4>
-              <b-media-aside>
-                <b-img
-                  id="img-preview"
-                  v-show="showPreview"
-                  :src="imagePreview"
-                />
-              </b-media-aside>
+              <b-card
+                id="img-preview"
+                :img-src="imagePreview"
+                v-show="showPreview"
+                :sub-title="`${file.name}`"
+              >
+              </b-card>
               <b-media
                 no-body
                 vertical-align="center"
-                class="flex-column flex-md-row"
+                class="flex-column flex-md-row mt-4"
               >
                 <b-media-body>
-                  <b-card-text id="b-card-text" class="my-50">
-                    <b-link id="blog-image-text">
-                      {{ file.name }}
-                    </b-link>
-                  </b-card-text>
                   <b-button-group class="d-inline-block">
                     <b-button
                       variant="outline-primary"
@@ -144,17 +139,13 @@
 import {
   BCard,
   BMedia,
-  BCardText,
-  BMediaAside,
   BMediaBody,
   BForm,
   BRow,
   BCol,
   BFormGroup,
   BFormInput,
-  BImg,
   BFormFile,
-  BLink,
   BButton,
   BFormTextarea,
   BProgress,
@@ -171,12 +162,8 @@ export default {
   components: {
     BCard,
     BMedia,
-    BCardText,
-    BMediaAside,
     BMediaBody,
     BForm,
-    BLink,
-    BImg,
     BRow,
     BCol,
     BButton,
