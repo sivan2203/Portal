@@ -384,7 +384,7 @@ export default {
             this.images.images = formData
             axios
               .post(
-                `http://localhost:8000/api/images/${this.newsData.id}`,
+                `http://localhost:8000/api/images/edit/${this.newsData.id}`,
                 formData,
                 {
                   headers: {
